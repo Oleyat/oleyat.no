@@ -1,0 +1,18 @@
+services:
+  # Selve webserveren som holder filene dine
+  webserver:
+    image: nginx:latest
+    container_name: nginx_site
+    restart: always
+    volumes:
+      - ./html/www:/usr/share/nginx/www:ro
+    # Vi trenger ikke "ports" her fordi tunnelen snakker med den internt!
+
+  # Tunnel-klienten som kobler deg til Cloudflare
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared_tunnel
+    restart: always
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN={TOKEN}
