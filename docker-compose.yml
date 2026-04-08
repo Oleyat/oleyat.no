@@ -6,9 +6,15 @@ services:
     restart: always
     volumes:
       - ./www:/usr/share/nginx/html:ro
-    # Vi trenger ikke "ports" her fordi tunnelen snakker med den internt!
 
-  # Tunnel-klienten som kobler deg til Cloudflare
+backend:
+    build: ./backend     
+    container_name: oleyat_backend
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - PORT=5000           
+
   tunnel:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared_tunnel
