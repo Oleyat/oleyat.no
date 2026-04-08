@@ -5,7 +5,7 @@ services:
     container_name: nginx_site
     restart: always
     volumes:
-      - ./html/www:/usr/share/nginx/oleyat-web/www:ro
+      - ./www:/usr/share/nginx/www:ro
     # Vi trenger ikke "ports" her fordi tunnelen snakker med den internt!
 
   # Tunnel-klienten som kobler deg til Cloudflare
