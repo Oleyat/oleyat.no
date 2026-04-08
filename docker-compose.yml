@@ -5,7 +5,7 @@ services:
     container_name: nginx_site
     restart: always
     volumes:
-      - ./www:/usr/share/nginx/www:ro
+      - ./www:/usr/share/nginx/html:ro
     # Vi trenger ikke "ports" her fordi tunnelen snakker med den internt!
 
   # Tunnel-klienten som kobler deg til Cloudflare
@@ -15,4 +15,4 @@ services:
     restart: always
     command: tunnel run
     environment:
-      - TUNNEL_TOKEN={TOKEN}
+      - TUNNEL_TOKEN=${TOKEN}
