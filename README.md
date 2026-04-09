@@ -1,3 +1,3 @@
 oleyat.no
 
-fullstack website built with react, express/node and using nginx with cloudflare tunnel.
+fullstack website built with vite, react, express/node, tailwind and using nginx with cloudflare tunnel.
