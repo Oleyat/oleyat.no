@@ -19,7 +19,7 @@ function App() {
             <li>
               <a href="https://github.com/oleyat" target="_blank">
                 <svg
-                  className="button-icon fill-olive-500 w-12 h-12"
+                  className="button-icon fill-olive-500 hover:fill-olive-600 w-12 h-12"
                   role="presentation"
                   aria-hidden="true"
                 >
@@ -31,7 +31,7 @@ function App() {
             <li>
               <a href="https://www.linkedin.com/in/haydar-oleyat/" target="_blank">
                 <svg
-                  className="button-icon fill-olive-500 w-12 h-12 "
+                  className="button-icon fill-olive-500 hover:fill-olive-600 w-12 h-12 "
                   role="presentation"
                   aria-hidden="true"
                 >
