@@ -1,9 +1,12 @@
 import './App.css'
+import Navbar from './components/Navbar.tsx'
 
 function App() {
 
   return (
     <>
+      <Navbar />
+
       <section className="center relative mt-50 w-full h-96">
         <div className="mx-20">
           <h1 className='text-8xl text-center'>velkommen</h1>
