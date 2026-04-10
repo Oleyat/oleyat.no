@@ -3,13 +3,19 @@ import Navbar from './components/Navbar.tsx'
 
 function App() {
 
+  const velkommenText = "velkommen";
+
   return (
     <>
       <Navbar />
 
       <section className="center relative mt-50 w-full h-96">
         <div className="mx-20">
-          <h1 className='text-8xl text-center'>velkommen</h1>
+
+
+          <h1 className='text-8xl text-center'>{velkommenText.split("").map((char) => (
+            <span className="hover:uppercase hover:text-amber-500/80 transition duration-100 ">{char}</span>))}
+          </h1>
           <p className='text-3xl mt-2 text-center text-slate-500/30'>oleyat.no</p>
         </div>
       </section>
@@ -22,7 +28,7 @@ function App() {
             <li>
               <a href="https://github.com/oleyat" target="_blank">
                 <svg
-                  className="button-icon fill-olive-500 hover:fill-olive-600 w-12 h-12"
+                  className="social_icon"
                   role="presentation"
                   aria-hidden="true"
                 >
@@ -34,7 +40,7 @@ function App() {
             <li>
               <a href="https://www.linkedin.com/in/haydar-oleyat/" target="_blank">
                 <svg
-                  className="button-icon fill-olive-500 hover:fill-olive-600 w-12 h-12 "
+                  className="social_icon"
                   role="presentation"
                   aria-hidden="true"
                 >
