@@ -1,9 +1,8 @@
 import './App.css'
 import Navbar from './components/Navbar.tsx'
+import { ColorText } from './components/decoration/ColorText.tsx';
 
 function App() {
-
-  const velkommenText = "velkommen";
 
   return (
     <>
@@ -13,10 +12,8 @@ function App() {
         <div className="mx-20">
 
 
-          <h1 className='text-8xl text-center'>{velkommenText.split("").map((char) => (
-            <span className="hover:uppercase hover:text-amber-500/80 transition duration-100 ">{char}</span>))}
-          </h1>
-          <p className='text-3xl mt-2 text-center text-slate-500/30'>oleyat.no</p>
+          <h1 className='text-8xl text-center'>velkommen</h1>
+          <p className='text-3xl mt-2 text-center text-slate-500/30'><ColorText text={"oleyat.no"} /></p>
         </div>
       </section>
 
@@ -34,7 +31,7 @@ function App() {
                 >
                   <use href="/icons.svg#github-icon"></use>
                 </svg>
-                <p className='text-slate-500/30'>Github</p>
+                <p className='text-slate-500/30'><ColorText text="Github" /></p>
               </a>
             </li>
             <li>
@@ -46,7 +43,7 @@ function App() {
                 >
                   <use href="/icons.svg#linkedin-icon"></use>
                 </svg>
-                <p className='text-slate-500/30'>LinkedIn</p>
+                <p className='text-slate-500/30'><ColorText text="LinkedIn" /></p>
               </a>
             </li>
           </ul>

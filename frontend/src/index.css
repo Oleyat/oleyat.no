@@ -9,7 +9,7 @@
 :root {
   background: var(--bg);
   color: var(--color-accent);
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: Roboto, monospace, sans-serif;
 }
 
 body {
