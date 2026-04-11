@@ -1,5 +1,4 @@
 import './Home.css'
-import Navbar from '../components/Navbar.tsx'
 import { ColorText } from '../components/decoration/ColorText.tsx';
 
 function Home() {
