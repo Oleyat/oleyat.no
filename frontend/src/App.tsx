@@ -18,6 +18,7 @@ function App() {
           <Route path="/portfolio" element={<Temp />} />
           <Route path="/blog" element={<Temp />} />
           <Route path="/kontakt" element={<Temp />} />
+	  <Route path="*" element={<Temp />} />
         </Routes>
         
       </BrowserRouter>
