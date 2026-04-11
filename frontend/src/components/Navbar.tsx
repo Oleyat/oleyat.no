@@ -8,17 +8,17 @@ function Navbar() {
             <ul className='flex flex-row items-center justify-center gap-25 h-full text-xl'>
                 <li>
                   <a href="/#" className='p-2'>
-                    <ColorText text="portfolio"/>
+                    <span className='text-yellow-400'>//</span><ColorText text="portfolio"/>
                   </a>
                 </li>
                 <li>
                   <a href="/#" className='p-2'>
-                    <ColorText text="blog" />
+                    <span className='text-pink-400'>//</span><ColorText text="blog" />
                   </a>
                 </li>
                 <li>
                   <a href="/#" className='p-2'>
-                    <ColorText text="kontakt" />
+                    <span className='text-sky-400'>//</span><ColorText text="kontakt" />
                   </a>
                 </li>
             </ul>
