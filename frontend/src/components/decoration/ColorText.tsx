@@ -9,7 +9,7 @@ const generateColor = () => `hsl(${Math.floor(Math.random() * 360)}, 90%, 80%)`;
     <span
       onMouseOver={() => setColor(generateColor())}
       style={{ '--hover-color': color } as React.CSSProperties}
-      className="hover:uppercase hover:font-extrabold hover:text-[var(--hover-color)] transition duration-150 ease-in-out"
+      className="hover:uppercase hover:font-extrabold hover:text-[var(--hover-color)] transition duration-2000 hover:duration-50 ease-in-out"
     >
       {char}
     </span>
