@@ -1,5 +1,5 @@
-import './Navbar.css'
 import { ColorText } from './decoration/ColorText';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -7,19 +7,19 @@ function Navbar() {
       <nav className="navbar w-full h-16 bg-stone-800/30 ">
             <ul className='flex flex-row items-center justify-center gap-25 h-full text-xl'>
                 <li>
-                  <a href="/#" className='p-2'>
-                    <ColorText text="portfolio"/>
-                  </a>
+                  <Link to="/portfolio" className='p-2'>
+                    <span className='text-yellow-400'>//</span><ColorText text="portfolio"/>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/#" className='p-2'>
-                    <ColorText text="blog" />
-                  </a>
+                  <Link to="/blog" className='p-2'>
+                    <span className='text-pink-400'>//</span><ColorText text="blog" />
+                  </Link>
                 </li>
                 <li>
-                  <a href="/#" className='p-2'>
-                    <ColorText text="kontakt" />
-                  </a>
+                  <Link to="/kontakt" className='p-2'>
+                    <span className='text-sky-400'>//</span><ColorText text="kontakt" />
+                  </Link>
                 </li>
             </ul>
       </nav>
