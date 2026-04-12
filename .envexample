@@ -1,1 +1,2 @@
 TOKEN=cf tunnel token
+ALLOWED_WEB_ORIGIN= allowed website to make requests
