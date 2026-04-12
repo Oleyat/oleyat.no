@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar.tsx'
 import Home from './pages/Home.tsx';
 import Temp from './pages/Temp.tsx';
+import Portfolio from './pages/Portfolio.tsx';
 
 function App() {
 
@@ -15,10 +16,11 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Temp />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Temp />} />
           <Route path="/kontakt" element={<Temp />} />
-	  <Route path="*" element={<Temp />} />
+          <Route path="*" element={<Temp />} />
+	        <Route path="*" element={<Temp />} />
         </Routes>
         
       </BrowserRouter>
