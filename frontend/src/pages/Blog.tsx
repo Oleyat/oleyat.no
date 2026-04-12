@@ -26,9 +26,7 @@ function Blog() {
         </div>
       </section>
       <section className="relative mt-10 mx-20 prose prose-invert">
-        {articles.length === 0 ? (
-          <p className='text-3xl text-slate-500/30'><ColorText text={"ingen artikler funnet"} /></p>
-        ) : (
+        {
           articles.map((article) => (
             <div key={article.id} className='mb-10'>
               <Link to={`/blog/article/${article.slug}`} className='no-underline'>
@@ -37,7 +35,7 @@ function Blog() {
               </Link>
             </div>
           ))
-        )}
+        }
       </section>
     </>
   )
