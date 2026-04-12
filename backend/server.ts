@@ -2,11 +2,17 @@ import express from "express";
 import cors from "cors";
 import { db, initDb } from "./db/db.js";
 import { getArticle, postArticle, getAllArticles, deleteArticle } from "./controller.js";
+const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://localhost:5173';
+
 
 const PORT = 5000;
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [allowedOrigin],
+  methods: ['GET', 'POST', 'DELETE'],
+  credentials: true
+}));
 
 app.post("/api/article", async (req, res) => {
   const { title, description, slug, content } = req.body;
@@ -40,5 +46,5 @@ app.delete("/api/article/:id", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Server is running on port 5000");
+  console.log(`Server is running on port ${PORT}`);
 });
