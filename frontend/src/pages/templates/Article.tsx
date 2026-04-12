@@ -11,7 +11,7 @@ function Article() {
   const { slug } = useParams<{ slug: string }>();
   useEffect(() => {
     if (!slug) return;
-    fetch(`http://localhost:5000/api/article/${slug}`)
+    fetch(`/api/article/${slug}`)
       .then(response => response.json())
       .then(data => {setArticleContent(data as ArticleType)})
       .catch(error => console.error("Error fetching article:", error));
