@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.tsx'
 import Home from './pages/Home.tsx';
 import Temp from './pages/Temp.tsx';
 import Portfolio from './pages/Portfolio.tsx';
+import Article from './pages/templates/Article.tsx';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Temp />} />
           <Route path="/kontakt" element={<Temp />} />
-          <Route path="*" element={<Temp />} />
+          <Route path="/article" element={<Article />} />
 	        <Route path="*" element={<Temp />} />
         </Routes>
         
