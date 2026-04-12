@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import { db, initDb } from "./db/db.ts";
-import { getArticle, postArticle, getAllArticles, deleteArticle } from "./controller.ts";
+import { db, initDb } from "./db/db.js";
+import { getArticle, postArticle, getAllArticles, deleteArticle } from "./controller.js";
 
 const PORT = 5000;
 const app = express();

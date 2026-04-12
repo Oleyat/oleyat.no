@@ -1,4 +1,4 @@
-import { db } from "./db/db.ts";
+import { db } from "./db/db.js";
 
 
 export async function getArticle(slug: string) {
