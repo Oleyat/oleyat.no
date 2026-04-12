@@ -1,18 +1,72 @@
 import { ColorText } from '../../components/decoration/ColorText.tsx';
+import ReactMarkdown from 'react-markdown';
+
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark as dark} from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+const articleContent = `
+# EXAMPLE
+
+- text
+- more TEXT
+
+## double hash
+*kursiv*
+dddddddddddddddddddddddddddddddddddddddddddddddddddddd sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+
+**fet tekst**
+
+### tripple hash
+
+Link here [link](https://www.google.com)
+
+\`inline code\`
+
+
+
+~~~python
+import numpy as np
+print('It works!')
+~~~
+
+`;
 
 function Article() {
-
   return (
     <>
-      <section className="center relative mt-25 w-full h-96">
+    <article>
+      <section className="center relative mt-25 w-full">
         <div className="mx-20">
-            <h1 className='md:text-8xl text-4xl  text-left'>portfolio</h1>
-            <p className='text-3xl mt-2 text-left text-slate-500/30'><ColorText text={"trykk på et prosjekt for å se detaljer"} />
-            </p>
-
-          
+            <h1 className='md:text-8xl text-4xl  text-left'><ColorText text={"prosjekt navn"}/></h1>
+            <p className='text-3xl mt-2 text-left text-slate-500/30 wrap-anywhere'><ColorText text={"prosjekt beskrivelse"} /></p>
         </div>
       </section>
+      <section className="relative mt-25 mx-20 max-w-full wrap-anywhere prose prose-invert">
+        <img src="#" alt="placeholder" className='w-full rounded-lg mb-10' />
+        <ReactMarkdown
+        children={articleContent}
+        components={{
+      code(props: any) {
+        const {children, className, node, ...rest} = props
+        const match = /language-(\w+)/.exec(className || '')
+        return match ? (
+          <SyntaxHighlighter
+            {...rest}
+            PreTag="div"
+            children={String(children).replace(/\n$/, '')}
+            language={match[1]}
+            style={dark}
+          />
+        ) : (
+          <code {...rest} className={className}>
+            {children}
+          </code>
+        )
+      }
+    }}
+        />
+      </section>
+      </article>
     </>
   )
 }
