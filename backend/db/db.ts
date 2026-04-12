@@ -1,6 +1,6 @@
 import Database from 'better-sqlite3'
 import { Kysely, SqliteDialect } from 'kysely'
-import { Database as DBType } from './types'
+import { Database as DBType } from './types.js'
 
 const nativeDb = new Database('./data/oleyat.db')
 
