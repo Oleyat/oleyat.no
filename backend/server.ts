@@ -6,6 +6,7 @@ import { getArticle, postArticle, getAllArticles, deleteArticle } from "./contro
 const PORT = 5000;
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post("/api/article", async (req, res) => {
   const { title, description, slug, content } = req.body;
