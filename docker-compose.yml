@@ -14,9 +14,11 @@ backend:
     restart: always
     environment:
       - NODE_ENV=production
-      - PORT=5000           
+      - PORT=5000  
+    volumes:
+      - ./backend/data:/app/data        
 
-  tunnel:
+tunnel:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared_tunnel
     restart: always
