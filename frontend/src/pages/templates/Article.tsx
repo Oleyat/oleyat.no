@@ -22,7 +22,7 @@ function Article() {
 
   return (
     <>
-    <article>
+    <article className='xl:mx-30'>
       <section className="center relative mt-25 w-full">
         <div className="mx-20">
             <h1 className='md:text-8xl text-4xl  text-left'><ColorText text={articleContent.title}/></h1>

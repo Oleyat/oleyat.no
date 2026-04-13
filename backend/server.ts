@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { db, initDb } from "./db/db.js";
 import { getArticle, postArticle, getAllArticles, deleteArticle } from "./controller.js";
-const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://localhost:5173';
+const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://127.0.0.1:5000';
 
 
 const PORT = 5000;
