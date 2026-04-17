@@ -5,7 +5,7 @@ function Home() {
 
   return (
     <>
-      <section className="center relative mt-25 xlg:mt-30 w-full h-96">
+      <section className="center relative mt-50 w-full h-96">
         <div className="mx-20">
 
 
@@ -14,7 +14,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="w-full absolute bottom-30 lg:bottom-10 xlg:bottom-30">
+      <section className="w-full absolute bottom-30 ">
         <div id="social">
           <h2 className='text-xl md:text-2xl text-center'>finn meg her</h2>
           <p className='text-l md:text-2xl text-center text-slate-500/30'>eller ta kontakt gjennom skjema</p>
