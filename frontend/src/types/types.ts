@@ -5,4 +5,5 @@ export type ArticleType = {
   slug: string;
   id: number;
   created: string;
+  status?: string;
 };

@@ -7,6 +7,7 @@ import Article from './pages/templates/Article.tsx';
 import Blog from './pages/Blog.tsx';
 import Edit from './pages/templates/Edit.tsx';
 import Login from './pages/Login.tsx';
+import Admin from './pages/Admin.tsx';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/blog/article/:slug" element={<Article />} />
           <Route path="/blog/edit/:slug" element={<Edit />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
 	        <Route path="*" element={<Temp />} />
         </Routes>
         

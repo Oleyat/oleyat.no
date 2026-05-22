@@ -1,9 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { db, initDb } from "./db/db.js";
-import { getArticle, postArticle, getAllArticles, deleteArticle, putArticle } from "./controller.js";
+import { getArticle, postArticle, getAllArticles, deleteArticle, putArticle, putArticleStatus } from "./controller.js";
 const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://127.0.0.1:5000';
-
 
 const PORT = 5000;
 const app = express();
@@ -25,6 +24,13 @@ app.put("/api/article/:slug", async (req, res) => {
   const { title, description, content } = req.body;
   await putArticle(title, description, slug, content);
   res.status(201).json({ message: "Article updated" });
+});
+
+app.put("/api/article/status/:slug", async (req, res) => {
+  const slug = req.params.slug;
+  const { status} = req.body;
+  await putArticleStatus(slug, status);
+  res.status(201).json({ message: "Article status updated" });
 });
 
 app.get("/api/article/:slug", async (req, res) => {

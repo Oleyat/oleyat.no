@@ -1,4 +1,5 @@
 import { db } from "./db/db.js";
+import ArticleStatus from "./db/types.js";
 
 
 export async function getArticle(slug: string) {
@@ -44,6 +45,16 @@ export async function putArticle(title: string, description: string, slug: strin
         title: title,
         description: description,
         content: content
+    })
+    .where('slug', '=', slug)
+    .execute()
+}
+
+export async function putArticleStatus(slug: string, status: string) {
+    await db
+    .updateTable('articles')
+    .set({
+        status: status as ArticleStatus
     })
     .where('slug', '=', slug)
     .execute()

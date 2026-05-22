@@ -28,13 +28,14 @@ function Blog() {
       <section className="relative mt-10 mx-20 prose prose-invert">
         {
           articles.map((article) => (
+            article.status === 'published' && (
             <div key={article.id} className='mb-10'>
               <Link to={`/blog/article/${article.slug}`} className='no-underline'>
                 <h2 className='text-4xl mb-2'>// <ColorText text={article.title} /></h2>
                 <p className='text-xl text-slate-500/30'><ColorText text={article.description} /></p>
               </Link>
             </div>
-          ))
+          )))
         }
       </section>
     </>

@@ -6,11 +6,12 @@ import { oneDark as dark} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useParams } from 'react-router-dom';
 import type { ArticleType } from '../../types/types.ts';
 import TextareaAutosize from 'react-textarea-autosize';
-import { SuccessEvent } from '../../components/decoration/SuccessEvent.tsx';
+import { FailureEvent, SuccessEvent} from '../../components/decoration/EventNotification.tsx';
 
 function Edit() {
 
   const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
   const [articleContent, setArticleContent] = useState<ArticleType | null>(null);
   const { slug } = useParams<{ slug: string }>();
   useEffect(() => {
@@ -41,6 +42,8 @@ function Edit() {
       setTimeout(() => setSuccess(false), 3000);
     } catch (error) {
       console.error('Error updating article:', error);
+      setFailure(true);
+      setTimeout(() => setFailure(false), 3000);
     }
   };
 
@@ -66,6 +69,7 @@ function Edit() {
       </section>
       </form>
       {success && <SuccessEvent text="Artikel ble lagret!" />}
+      {failure && <FailureEvent text="Artikel ble ikke lagret!" />}
     </>
   )
 }
