@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { db, initDb } from "./db/db.js";
-import { getArticle, postArticle, getAllArticles, deleteArticle } from "./controller.js";
+import { getArticle, postArticle, getAllArticles, deleteArticle, putArticle } from "./controller.js";
 const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://127.0.0.1:5000';
 
 
@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: [allowedOrigin],
-  methods: ['GET', 'POST', 'DELETE'],
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
   credentials: true
 }));
 
@@ -18,6 +18,13 @@ app.post("/api/article", async (req, res) => {
   const { title, description, slug, content } = req.body;
   await postArticle(title, description, slug, content);
   res.status(201).json({ message: "Article created" });
+});
+
+app.put("/api/article/:slug", async (req, res) => {
+  const slug = req.params.slug;
+  const { title, description, content } = req.body;
+  await putArticle(title, description, slug, content);
+  res.status(201).json({ message: "Article updated" });
 });
 
 app.get("/api/article/:slug", async (req, res) => {

@@ -36,3 +36,15 @@ export async function deleteArticle(id: number) {
     .where('id', '=', id)
     .execute()
 }
+
+export async function putArticle(title: string, description: string, slug: string, content: string) {
+    await db
+    .updateTable('articles')
+    .set({
+        title: title,
+        description: description,
+        content: content
+    })
+    .where('slug', '=', slug)
+    .execute()
+}
