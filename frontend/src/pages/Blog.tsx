@@ -8,7 +8,7 @@ function Blog() {
   const [articles, setArticles] = useState<ArticleType[]>([]);
 
   useEffect(() => {
-    fetch(`/api/articles/`)
+    fetch(`/api/article/all`)
       .then(response => response.json())
       .then(data => {setArticles(data as ArticleType[])})
       .catch(error => console.error("Error fetching article:", error));

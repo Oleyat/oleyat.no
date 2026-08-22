@@ -14,11 +14,11 @@ function Article() {
     fetch(`/api/article/${slug}`)
       .then(response => response.json())
       .then(data => {setArticleContent(data as ArticleType)})
-      .catch(error => console.error("Error fetching article:", error));
+      .catch(error => console.error("Error fetching article:", error))
     },
    [slug]);
 
-  if (!articleContent) return null;
+  if (!articleContent) return <div className="text-center mt-20">Artikkelen ble ikke funnet.</div>;
 
   return (
     <>
