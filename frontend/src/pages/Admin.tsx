@@ -54,9 +54,11 @@ function Admin() {
                 <p className='text-lg text-slate-500/30'>Status: {article.status}</p>
               </Link>
               <div className='flex flex-row gap-2'>
+                <Link to={`/blog/edit/${article.slug}`}>
                 <button className='bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 border border-amber-700 rounded transition duration-150'>
                       Edit
                 </button>
+                </Link>
                 {(article.status === 'draft' || article.status === 'unlisted') && (
                     <Publish onClick={handleSubmit(article.slug, 'published')} />
                 )}
